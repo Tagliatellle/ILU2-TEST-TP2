@@ -23,7 +23,10 @@ public class BoundaryAcheterProduit {
 				controlAcheterProduit.afficherVendeur(listeEtal);
 				int indiceEtalChoisi = Clavier.entrerEntier("Chez quel commerçant voulez-vous acheter des fleurs ?\n");
 				Etal etal = listeEtal[indiceEtalChoisi];
-				controlAcheterProduit.acheterProduit(etal, nomAcheteur, produit);
+				System.out.println(nomAcheteur + " se déplace jusqu'à l'étal du vendeur "+ etal.getVendeur().getNom()+"\n"+"Bonjour "+nomAcheteur+"\n");
+				int quantiteAcheter = Clavier.entrerEntier("Combien de "+produit+" voulez-vous acheter ?\n");
+				controlAcheterProduit.acheterProduit(etal, nomAcheteur, produit, quantiteAcheter);
+				System.out.println(nomAcheteur+ " achète "+ quantiteAcheter + " à "+etal.getVendeur().getNom());
 			}
 		}
 	}
